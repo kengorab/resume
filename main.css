@@ -1,0 +1,112 @@
+@page {
+    size: 8.5in 11in;
+    margin: 0;
+}
+
+@media all {
+    .page-break {
+        display: none;
+    }
+}
+
+@media print {
+    .page-break {
+        display: block;
+        margin-top: 60px;
+        page-break-before: always;
+    }
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.resume {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 900px;
+    box-sizing: border-box;
+    padding: 16px 40px 48px 40px;
+    justify-content: center;
+}
+
+/*--------------- Header ---------------*/
+
+header {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #aeaeae;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+/*--------------- Contact Info ---------------*/
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.contact-info .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info .row:not(:last-child) {
+    margin-bottom: 6px;
+}
+
+.contact-info .row .span:last-child {
+    text-align: right;
+}
+
+/*--------------- Experience Section ---------------*/
+section {
+    margin-top: 16px;
+}
+
+.section {
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section .lede-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section .lede-line:not(:first-child) {
+    margin-top: 12px;
+}
+
+.section .lede-line .b-side {
+    font-size: 14px;
+}
+
+.section ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.section ul li {
+    margin-bottom: 12px;
+    line-height: 20px;
+    font-size: 14px;
+}

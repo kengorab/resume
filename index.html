@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ken Gorab's Résumé</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+        <link id="main-styles" rel="stylesheet" href="./main.css">
+
+        <!-- "live-reload" code -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const mainStyles = document.getElementById('main-styles')
+              let shouldReload = true
+
+              function tick() {
+                if (!shouldReload)
+                  return
+                // Trigger styles refresh
+                mainStyles.href = mainStyles.href + ''
+
+                // Load new html
+                fetch('./index.html')
+                  .then(res => res.text())
+                  .then(html => {
+                    const dummyHtml = document.createElement('html')
+                    dummyHtml.innerHTML = html
+                    dummyHtml.querySelector('body').innerHTML
+                    document.querySelector('body').innerHTML = dummyHtml.querySelector('body').innerHTML
+                  })
+              }
+
+              setInterval(tick, 1000)
+
+              document.addEventListener('keyup', ({ key }) => {
+                if (key === 'r') {
+                  shouldReload = !shouldReload
+
+                  const div = document.createElement('div')
+                  div.style.position = 'absolute';
+                  div.style.left = '0';
+                  div.style.top = '0';
+                  div.innerHTML = `<span>Live-reload ${shouldReload ? 'enabled' : 'disabled'}</span>`
+                  document.querySelector('body').appendChild(div)
+                  setTimeout(() => document.querySelector('body').removeChild(div), 2000)
+                }
+              })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="resume">
+            <header>
+                <h1>Ken Gorab</h1>
+                <div class="contact-info">
+                    <div class="row">
+                        <span>Phone: (973) 975-7561</span>
+                        <span>Github: github.com/kengorab</span>
+                    </div>
+                    <div class="row">
+                        <span>Email: ken.gorab@gmail.com</span>
+                        <span>Medium: medium.com/@ken.gorab</span>
+                    </div>
+                </div>
+            </header>
+
+            <section>
+                <h2>Work Experience</h2>
+                <div class="section">
+                    <div class="lede-line">
+                        <span>Engineering Manager | Web.com (Formerly Yodle)</span>
+                        <span class="b-side">May 2017 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Architected and implemented a data-driven, highly-customizable, mobile-first web application which was delivered to customers monthly via SMS/email and provided at-a-glance data visualizations for their marketing insights.</li>
+                        <li>Introduced and evangelized new technologies to the team (and the organization) including React, Redux, TypeScript, Webpack, and Kotlin.</li>
+                        <li>Actively participated in company culture: planning hackathons, giving internal tech talks, hosting meetups, and more.</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <div class="lede-line">
+                        <span>Senior Software Engineer | Yodle</span>
+                        <span class="b-side">March 2016 - May 2017</span>
+                    </div>
+                    <ul>
+                        <li>Engineered robust reporting framework on top of ElasticSearch data to facilitate data-driven Business Intelligence dashboard for enterprise customers.</li>
+                        <li>Designed and built custom integration with enterprise customer's LDAP server, to facilitate a proxy for a "Single Sign-On" feature.</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <div class="lede-line">
+                        <span>Software Engineer | Yodle</span>
+                        <span class="b-side">June 2014 - March 2016</span>
+                    </div>
+                    <ul>
+                        <li>Developed various products for enterprise customers, including Appointment Booking, Offers/Coupons, Email Marketing, and others.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Personal Projects</h2>
+                <div class="section">
+                    <div class="lede-line">
+                        <span>Mega-lang</span>
+                        <span class="b-side">github.com/kengorab/mega-jvm</span>
+                    </div>
+                    <ul>
+                        <li>A succinct, statically-typed programming language that compiles to bytecode, runs on the JVM, and has decent interoperability with Java. It has a hand-written, recursive-descent Pratt parser, a typechecker, and uses ASM for bytecode generation.</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <div class="lede-line">
+                        <span>Yarnover</span>
+                        <span class="b-side">github.com/kengorab/yarnover-rn</span>
+                    </div>
+                    <ul>
+                        <li>A cross-platform mobile application, written in React Native, consuming the API of the popular knitting and crochet site Ravelry.</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <div class="lede-line">
+                        <span>Hooke</span>
+                        <span class="b-side">github.com/kengorab/hooke</span>
+                    </div>
+                    <ul>
+                        <li>An approximate implementation of Spring's Dependency Injection container, written from scratch in a multi-part series of blog posts on Medium.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="page-break"></div>
+            <section>
+                <h2>Languages & Frameworks</h2>
+                <div class="section">
+                    <span>Backend: Java, Scala, NodeJS, Kotlin, Python | Spring, Play, JUnit, ExpressJS</span>
+                    <br>
+                    <span>Frontend: JavaScript, TypeScript, SCSS | React, Redux, AngularJS, Thymeleaf, JSPs</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technologies & Competencies</h2>
+                <div class="section">
+                    <span>REST, Thrift, Automated Testing, Microservices, CI/CD, Postgresql, ElasticSearch, MongoDB,</span>
+                    <span>Agile/Scrum, Managing tech debt, career development</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <div class="section">
+                    <div class="lede-line">
+                        <span>BS in Computer Science & BA in Mathematics | Bucknell University</span>
+                        <span class="b-side">May 2014</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
